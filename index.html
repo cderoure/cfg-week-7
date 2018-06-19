@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title>CFG: Week 7</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron">
+                <h1>CFG: Week 7</h1>
+                <h2>NY Times API</h2>
+                <h2>https://developer.nytimes.com/</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <h2>To set up</h2>
+            <ul>
+                <li>Go to <a href="https://developer.nytimes.com/signup">https://developer.nytimes.com/signup</a> and sign up for an API Key</li>
+                <li>Replace <code>YOUR_API_KEY</code> with your API key (this should be emailed to you)</en></li>
+                <li>Look at the documentation to see what data you can query</li>
+                <li>Google for other APIs you can use, and give them a try! 🤗</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <h2>Try Me</h2>
+            <button class="btn btn-primary" onClick="onButtonClick()">
+                Click Me
+            </button>
+            <button class="btn btn-danger" onClick="onClearResultsClick()">
+                Clear Results
+            </button>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <h2>Types of books</h2>
+            <table class="table table-striped">
+                <tbody id="results"></tbody>
+            </table>
+        </div>
+    </div>
+  
+</body>
+
+</html>
