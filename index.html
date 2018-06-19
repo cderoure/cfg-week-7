@@ -36,19 +36,30 @@
         <hr>
 
         <div class="row">
-            <h2>Try Me</h2>
-            <button class="btn btn-primary" onClick="onButtonClick()">
-                Click Me
-            </button>
-            <button class="btn btn-danger" onClick="onClearResultsClick()">
-                Clear Results
-            </button>
+            <h3>Search for a book</h3>
+
+            <div class="form-inline">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">Book Title</div>
+                        <input type="text" class="form-control" id="search" placeholder="Search">
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onClick="onButtonClick()">
+                    Search
+                </button>
+    
+                <button class="btn btn-danger" onClick="onClearResultsClick()">
+                    Clear Results
+                </button>
+            </div>
+
         </div>
 
         <hr>
 
         <div class="row">
-            <h2>Types of books</h2>
             <table class="table table-striped">
                 <tbody id="results"></tbody>
             </table>
