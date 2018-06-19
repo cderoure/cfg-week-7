@@ -1,5 +1,5 @@
 var YOUR_API_KEY = 'c0897b7307fc4acd9fbc1b7e957b491e'; // replace with your key
-var API_ENDPOINT = 'https://api.nytimes.com/svc/books/v3/lists/overview.json'; // replace with the api url
+var BEST_SELLERS_URL = 'https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json';
 
 // look for the element that has the id "results"
 // create a new table row and cell
@@ -9,10 +9,14 @@ var API_ENDPOINT = 'https://api.nytimes.com/svc/books/v3/lists/overview.json'; /
 function addItemToTable(item) {
     var resultsTable = document.getElementById('results');
     var newRow = document.createElement("tr");
-    var newCell = document.createElement("td");
+    var titleCell = document.createElement("td");
+    var descriptionCell = document.createElement("td");
 
-    newCell.innerHTML = item.list_name;
-    newRow.appendChild(newCell);
+    titleCell.innerHTML = item.title;
+    newRow.appendChild(titleCell);
+
+    descriptionCell.innerHTML = item.description;
+    newRow.appendChild(descriptionCell);
     
     resultsTable.appendChild(newRow);
 }
@@ -22,14 +26,12 @@ function returnJSON(data) {
 }
 
 // get the results from the response
-// get the lists from the results;
-// for every item in our lists, we want to do something
+// for every item in our result list, we want to do something
 function handleResponse(response) {
     var results = response.results;
-    var lists = results.lists;
 
-    for (i = 0; i < lists.length; i++) {
-        addItemToTable(lists[i]);
+    for (i = 0; i < results.length; i++) {
+        addItemToTable(results[i]);
     }
 }
 
@@ -50,7 +52,9 @@ function getData(url) {
 
 // whenever someone clicks the button, this is what we want to do!
 function onButtonClick() {
-    var url = API_ENDPOINT + '?api-key=' + YOUR_API_KEY;
+    const searchValue = document.getElementById('search').value;
+
+    const url = BEST_SELLERS_URL + "?api-key=" + YOUR_API_KEY + "&title=" + searchValue;
 
     clearResults();
     getData(url);
